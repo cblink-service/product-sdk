@@ -137,4 +137,16 @@ class Client extends BaseApi
     {
         return $this->httpGet(sprintf('/product/%s/source', $id), $query);
     }
+
+    /**
+     * 修改商品状态
+     *
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function changeStatus(array $data = [])
+    {
+        return $this->httpPost('/product/status', $data);
+    }
 }
