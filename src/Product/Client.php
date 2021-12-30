@@ -42,7 +42,7 @@ class Client extends BaseApi
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function update($id, array $query = [])
+    public function update($id, array $data = [])
     {
         return $this->httpPut(sprintf('/product/%s', $id), $data);
     }
