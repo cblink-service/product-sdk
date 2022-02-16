@@ -19,6 +19,19 @@ class Client extends BaseApi
     }
 
     /**
+     * 分类详情
+     *
+     * @param $id
+     * @param array $query
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function show($id, array $query = [])
+    {
+        return $this->httpGet(sprintf('/category/%s', $id), $query);
+    }
+
+    /**
      * 创建分类
      *
      * @param array $data
