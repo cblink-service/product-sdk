@@ -73,6 +73,19 @@ class Client extends BaseApi
     }
 
     /**
+     * sku详情
+     *
+     * @param $id
+     * @param array $query
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function showSku($id, array $query = [])
+    {
+        return $this->httpGet(sprintf('/sku/%s', $id), $query);
+    }
+
+    /**
      * 获取商品SKU
      *
      * @param $id
