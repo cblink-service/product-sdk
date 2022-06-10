@@ -16,6 +16,7 @@ use Hyperf\Utils\Collection;
  * @property-read Attribute\Client $attribute
  * @property-read Spec\Client $spec
  * @property-read Service\Client $service
+ * @property-read Sku\Client $sku
  */
 class Application extends Container
 {
@@ -30,5 +31,6 @@ class Application extends Container
         Attribute\ServiceProvider::class,
         Spec\ServiceProvider::class,
         Service\ServiceProvider::class,
+        Sku\ServiceProvider::class,
     ];
 }
