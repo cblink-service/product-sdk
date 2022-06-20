@@ -48,6 +48,17 @@ class Client extends BaseApi
     }
 
     /**
+     * 删除商品
+     *
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function destroy($id)
+    {
+        return $this->httpDelete(sprintf('/product/%s', $id));
+    }
+
+    /**
      * 获取商品详情
      *
      * @param $id
