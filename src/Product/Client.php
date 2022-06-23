@@ -72,6 +72,19 @@ class Client extends BaseApi
     }
 
     /**
+     * 同步商品
+     *
+     * @param $id
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function sync($id, array $data = [])
+    {
+        return $this->httpPost(sprintf('/product/%s/sync', $id), $data);
+    }
+
+    /**
      * 获取商品SKU
      *
      * @param $id
