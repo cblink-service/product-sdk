@@ -70,6 +70,19 @@ class Client extends BaseApi
     }
 
     /**
+     * 修改状态
+     *
+     * @param $id
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function updateStatus($id, array $data = [])
+    {
+        return $this->httpPut(sprintf('/category/%s/status', $id), $data);
+    }
+
+    /**
      * 统计分类数量
      *
      * @param array $query
