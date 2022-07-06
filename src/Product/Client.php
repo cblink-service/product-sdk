@@ -74,14 +74,13 @@ class Client extends BaseApi
     /**
      * 同步商品
      *
-     * @param $id
      * @param array $data
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function sync($id, array $data = [])
+    public function sync(array $data = [])
     {
-        return $this->httpPost(sprintf('/product/%s/sync', $id), $data);
+        return $this->httpPost('/product/sync', $data);
     }
 
     /**
