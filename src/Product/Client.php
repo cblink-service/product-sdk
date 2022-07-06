@@ -57,7 +57,7 @@ class Client extends BaseApi
      */
     public function destroy($id, array $query = [])
     {
-        return $this->httpDelete(sprintf('/product/%s', $id));
+        return $this->httpDelete(sprintf('/product/%s', $id), $query);
     }
 
     /**
