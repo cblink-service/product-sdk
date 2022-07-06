@@ -50,10 +50,12 @@ class Client extends BaseApi
     /**
      * 删除商品
      *
+     * @param $id
+     * @param array $query
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function destroy($id)
+    public function destroy($id, array $query = [])
     {
         return $this->httpDelete(sprintf('/product/%s', $id));
     }
