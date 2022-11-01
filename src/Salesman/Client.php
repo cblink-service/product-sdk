@@ -68,4 +68,16 @@ class Client extends BaseApi
     {
         return $this->httpGet(sprintf('/custom/salesman/product/%s', $id), $query);
     }
+
+    /**
+     * 商品配置
+     *
+     * @param array $query
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function config(array $query = [])
+    {
+        return $this->httpGet('/custom/salesman/config', $query);
+    }
 }
