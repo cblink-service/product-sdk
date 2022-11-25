@@ -15,7 +15,7 @@ class Client extends BaseApi
      */
     public function calc(array $query = [])
     {
-        return $this->httpGet('/special/calc', $query);
+        return $this->httpPost('/special/calc', $query);
     }
 
 }
