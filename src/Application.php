@@ -20,6 +20,8 @@ use Hyperf\Utils\Collection;
  * @property-read Stock\Client $stock
  *
  * @property-read Salesman\Client $salesman
+ *
+ * @property-read Special\Client $special
  */
 class Application extends Container
 {
@@ -37,5 +39,6 @@ class Application extends Container
         Sku\ServiceProvider::class,
         Salesman\ServiceProvider::class,
         Stock\ServiceProvider::class,
+        Special\ServiceProvider::class,
     ];
 }
