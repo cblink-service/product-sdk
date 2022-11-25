@@ -164,6 +164,19 @@ class Client extends BaseApi
     }
 
     /**
+     * 获取运费模版
+     *
+     * @param $id
+     * @param array $query
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getFreight($id, array $query = [])
+    {
+        return $this->httpGet(sprintf('/product/%s/freight-template', $id), $query);
+    }
+
+    /**
      * 修改商品状态
      *
      * @param array $data
