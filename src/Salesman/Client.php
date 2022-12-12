@@ -54,7 +54,7 @@ class Client extends BaseApi
      */
     public function batchUpdate(array $data = [])
     {
-        return $this->httpPut('/custom/salesman/batch/product/%s', $data);
+        return $this->httpPut('/custom/salesman/batch/product', $data);
     }
 
     /**
