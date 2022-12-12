@@ -3,11 +3,13 @@
 namespace Cblink\Service\Product\Salesman;
 
 use Cblink\Service\Product\Kernel\BaseApi;
+use GuzzleHttp\Exception\GuzzleException;
+use Psr\Http\Message\ResponseInterface;
 
 class Client extends BaseApi
 {
     /**
-     * 商品列表
+     * 佣金商品列表
      *
      * @param array $query
      * @return array|\Psr\Http\Message\ResponseInterface|string
@@ -19,7 +21,7 @@ class Client extends BaseApi
     }
 
     /**
-     * 添加商品
+     * 添加商品佣金
      *
      * @param array $data
      * @return array|\Psr\Http\Message\ResponseInterface|string
@@ -31,7 +33,7 @@ class Client extends BaseApi
     }
 
     /**
-     * 修改商品
+     * 修改商品佣金
      *
      * @param $id
      * @param array $data
@@ -44,7 +46,19 @@ class Client extends BaseApi
     }
 
     /**
-     * 删除商品
+     * 批量修改商品佣金
+     *
+     * @param array $data
+     * @return array|ResponseInterface|string
+     * @throws GuzzleException
+     */
+    public function batchUpdate(array $data = [])
+    {
+        return $this->httpPut('/custom/salesman/batch/product/%s', $data);
+    }
+
+    /**
+     * 删除商品佣金
      *
      * @param $id
      * @param array $query
