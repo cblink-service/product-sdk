@@ -187,4 +187,17 @@ class Client extends BaseApi
     {
         return $this->httpPost('/product/status', $data);
     }
+
+    /**
+     * 批量修改SKU信息
+     *
+     * @param $id
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function batchUpdateSku($id, array $data = [])
+    {
+        return $this->httpPut(sprintf('/product/%s/sku', $id), $data);
+    }
 }
