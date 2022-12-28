@@ -15,7 +15,7 @@ class Client extends BaseApi
      */
     public function getSkuStock(array $data = [])
     {
-        return $this->httpPost('/stock/product/sku', $data);
+        return $this->httpGet('/stock/product/sku', $data);
     }
 
     /**
@@ -27,7 +27,7 @@ class Client extends BaseApi
      */
     public function getProductStock(array $data = [])
     {
-        return $this->httpPost('/stock/product', $data);
+        return $this->httpGet('/stock/product', $data);
     }
 
     /**
