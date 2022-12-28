@@ -1,12 +1,12 @@
 <?php
 
-namespace Cblink\Service\Product\Salesman;
+namespace Cblink\Service\Product\Custom;
 
 use Cblink\Service\Product\Kernel\BaseApi;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 
-class Client extends BaseApi
+class SalesmanClient extends BaseApi
 {
     /**
      * 佣金商品列表

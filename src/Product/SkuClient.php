@@ -1,14 +1,13 @@
 <?php
 
-namespace Cblink\Service\Product\Sku;
+namespace Cblink\Service\Product\Product;
 
 use Cblink\Service\Product\Kernel\BaseApi;
-use Hyperf\Utils\Arr;
 
 /**
  * 商品api
  */
-class Client extends BaseApi
+class SkuClient extends BaseApi
 {
 
     /**

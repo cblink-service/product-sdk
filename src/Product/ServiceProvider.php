@@ -12,5 +12,9 @@ class ServiceProvider implements ServiceProviderInterface
         $pimple['product'] = function($pimple){
             return new Client($pimple);
         };
+
+        $pimple['sku'] = function($pimple){
+            return new SkuClient($pimple);
+        };
     }
 }

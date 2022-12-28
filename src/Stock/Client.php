@@ -7,6 +7,30 @@ use Cblink\Service\Product\Kernel\BaseApi;
 class Client extends BaseApi
 {
     /**
+     * 获取sku库存
+     *
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getSkuStock(array $data = [])
+    {
+        return $this->httpPost('/stock/product/sku', $data);
+    }
+
+    /**
+     * 互殴商品库存
+     *
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getProductStock(array $data = [])
+    {
+        return $this->httpPost('/stock/product', $data);
+    }
+
+    /**
      * 增库存
      *
      * @param array $data
@@ -15,7 +39,7 @@ class Client extends BaseApi
      */
     public function increase(array $data = [])
     {
-        return $this->httpPost('/stock/increase', $data);
+        return $this->httpPost('/stock/product/increase', $data);
     }
 
     /**
@@ -27,7 +51,7 @@ class Client extends BaseApi
      */
     public function reduce(array $data = [])
     {
-        return $this->httpPost('/stock/reduce', $data);
+        return $this->httpPost('/stock/product/reduce', $data);
     }
 
     /**
@@ -39,7 +63,7 @@ class Client extends BaseApi
      */
     public function createStockOrder(array $data = [])
     {
-        return $this->httpPost('/stock-order', $data);
+        return $this->httpPost('/stock/order', $data);
     }
 
     /**
@@ -51,7 +75,7 @@ class Client extends BaseApi
      */
     public function stockOrderList(array $query = [])
     {
-        return $this->httpGet('/stock-order', $query);
+        return $this->httpGet('/stock/order', $query);
     }
 
     /**
@@ -64,7 +88,7 @@ class Client extends BaseApi
      */
     public function stockOrderShow($id, array $query = [])
     {
-        return $this->httpGet(sprintf('/stock-order/%s', $id), $query);
+        return $this->httpGet(sprintf('/stock/order/%s', $id), $query);
     }
 
     /**
@@ -77,6 +101,6 @@ class Client extends BaseApi
      */
     public function stockOrderProductList($id, array $query = [])
     {
-        return $this->httpGet(sprintf('/stock-order/%s/product', $id), $query);
+        return $this->httpGet(sprintf('/stock/order/%s/product', $id), $query);
     }
 }

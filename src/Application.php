@@ -16,10 +16,10 @@ use Hyperf\Utils\Collection;
  * @property-read Attribute\Client $attribute
  * @property-read Spec\Client $spec
  * @property-read Service\Client $service
- * @property-read Sku\Client $sku
+ * @property-read \Cblink\Service\Product\Product\SkuClient $sku
  * @property-read Stock\Client $stock
  *
- * @property-read Salesman\Client $salesman
+ * @property-read Custom\SalesmanClient $salesman
  *
  * @property-read Special\Client $special
  */
@@ -36,8 +36,7 @@ class Application extends Container
         Attribute\ServiceProvider::class,
         Spec\ServiceProvider::class,
         Service\ServiceProvider::class,
-        Sku\ServiceProvider::class,
-        Salesman\ServiceProvider::class,
+        Custom\ServiceProvider::class,
         Stock\ServiceProvider::class,
         Special\ServiceProvider::class,
     ];
