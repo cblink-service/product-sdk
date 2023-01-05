@@ -200,4 +200,16 @@ class Client extends BaseApi
     {
         return $this->httpPut(sprintf('/product/%s/sku', $id), $data);
     }
+
+    /**
+     * 导入
+     *
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function import(array $data = [])
+    {
+        return $this->httpPost('/product/import', $data);
+    }
 }
