@@ -79,4 +79,16 @@ class Client extends BaseApi
     {
         return $this->httpGet(sprintf('/stock-order/%s/product', $id), $query);
     }
+
+    /**
+     * SKU最新采购价列表
+     *
+     * @param array $query
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function skuPurchasePriceList(array $query = [])
+    {
+        return $this->httpGet('/stock-order/sku/purchase/price', $query);
+    }
 }
