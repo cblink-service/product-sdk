@@ -18,6 +18,7 @@ use Hyperf\Utils\Collection;
  * @property-read Service\Client $service
  * @property-read \Cblink\Service\Product\Product\SkuClient $sku
  * @property-read Stock\Client $stock
+ * @property-read Statistics\Client $statistics
  *
  * @property-read Custom\SalesmanClient $salesman
  *
@@ -39,5 +40,6 @@ class Application extends Container
         Custom\ServiceProvider::class,
         Stock\ServiceProvider::class,
         Special\ServiceProvider::class,
+        Statistics\ServiceProvider::class,
     ];
 }
