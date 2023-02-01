@@ -113,6 +113,6 @@ class Client extends BaseApi
      */
     public function skuPurchasePriceList(array $query = [])
     {
-        return $this->httpGet('/stock-order/sku/purchase/price', $query);
+        return $this->httpGet('/stock/order/sku/purchase/price', $query);
     }
 }
