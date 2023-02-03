@@ -189,6 +189,19 @@ class Client extends BaseApi
     }
 
     /**
+     * 更新库存
+     *
+     * @param $id
+     * @param array $data
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function updateStock($id, array $data = [])
+    {
+        return $this->httpPut(sprintf('/product/%s/stock', $id), $data);
+    }
+
+    /**
      * 批量修改SKU信息
      *
      * @param $id
