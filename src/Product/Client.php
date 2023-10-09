@@ -214,16 +214,16 @@ class Client extends BaseApi
     }
 
     /**
-     * 优惠券
+     * 其他业务关联
      *
      * @param $id
      * @param array $query
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getCoupon($id, array $query = [])
+    public function getOther($id, array $query = [])
     {
-        return $this->httpGet(sprintf('/product/%s/coupon', $id), $query);
+        return $this->httpGet(sprintf('/product/%s/other', $id), $query);
     }
 
 }
