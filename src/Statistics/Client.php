@@ -26,7 +26,7 @@ class Client extends BaseApi
      * @return array|\Psr\Http\Message\ResponseInterface|string
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function productStatistics(array $data = [])
+    public function increase(array $data = [])
     {
         return $this->httpPost('/statistics/product', $data);
     }
