@@ -213,4 +213,17 @@ class Client extends BaseApi
         return $this->httpPost('/product/import', $data);
     }
 
+    /**
+     * 优惠券
+     *
+     * @param $id
+     * @param array $query
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getCoupon($id, array $query = [])
+    {
+        return $this->httpGet(sprintf('/product/%s/coupon', $id), $query);
+    }
+
 }
