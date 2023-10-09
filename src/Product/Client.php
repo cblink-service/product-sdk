@@ -226,4 +226,17 @@ class Client extends BaseApi
         return $this->httpPost('/product/import', $data);
     }
 
+    /**
+     * 其他业务关联
+     *
+     * @param $id
+     * @param array $query
+     * @return array|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getOther($id, array $query = [])
+    {
+        return $this->httpGet(sprintf('/product/%s/other', $id), $query);
+    }
+
 }
